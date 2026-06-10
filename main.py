@@ -46,7 +46,10 @@ console = Console()
 def crear_llm():
     # ── Opción A: Groq (recomendado, gratis) ──
     # Consigue tu key en https://console.groq.com
-    GROQ_API_KEY = "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"
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+    if not GROQ_API_KEY:
+        console.print("[red]❌ GROQ_API_KEY no encontrada. Añade GROQ_API_KEY a tu archivo .env[/red]")
+        sys.exit(1)
 
     # ── Opción B: Gemini (si tienes billing activado) ──
     # GEMINI_API_KEY = "PON_AQUI_TU_GEMINI_KEY"

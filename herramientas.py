@@ -11,7 +11,9 @@ from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
 from tavily import TavilyClient
 
-TAVILY_KEY = "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"  # https://app.tavily.com
+TAVILY_KEY = os.getenv("TAVILY_API_KEY")
+if not TAVILY_KEY:
+    raise EnvironmentError("TAVILY_API_KEY no está definida en las variables de entorno")
 tavily = TavilyClient(api_key=TAVILY_KEY)
 # ─────────────────────────────────────────
 #  TAVILY — Web y Noticias (GRATIS)

@@ -182,7 +182,7 @@ def exportar_pdf(contenido_md: str, sector: str, region: str, nombre_archivo: st
         f"Fecha: {datetime.now().strftime('%d de %B de %Y')}",
         estilos["meta_portada"]
     ))
-    historia.append(Paragraph("Generado pore el Equipo de WeAI", estilos["meta_portada"]))
+    historia.append(Paragraph("Generado por el Equipo de MarketAgents", estilos["meta_portada"]))
 
     historia.append(Spacer(1, 1*cm))
     historia.append(HRFlowable(width="100%", thickness=1, color=COLOR_DORADO))
